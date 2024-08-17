@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #4a1919;
+}
+
+.slider-container {
+    text-align: center;
+}
+
+.slider {
+    width: 300px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 18px;
+}
+

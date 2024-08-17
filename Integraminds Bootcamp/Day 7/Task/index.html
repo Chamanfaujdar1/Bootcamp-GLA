@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Redirect</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function redirectToPage() {
+            // Get the selected radio button value
+            const selectedOption = document.querySelector('input[name="registerOption"]:checked').value;
+            
+            // Redirect based on the selected value
+            if (selectedOption === "register") {
+                window.location.href = "register.html"; // Replace with your target page
+            } else if (selectedOption === "registerWithPhoto") {
+                window.location.href = "register_with_photo.html"; // Replace with your target page
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Choose an Option</h2>
+    
+    <!-- Radio buttons with same name but different values -->
+    <input type="radio" id="register" name="registerOption" value="register">
+    <label for="register">Register</label><br>
+
+    <input type="radio" id="registerWithPhoto" name="registerOption" value="registerWithPhoto">
+    <label for="registerWithPhoto">Register with Photo</label><br><br>
+
+    <!-- Button to trigger the redirect -->
+    <button onclick="redirectToPage()">Submit</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

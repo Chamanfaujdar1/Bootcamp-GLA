@@ -1,0 +1,22 @@
+[{
+    "name": "hello",
+    "age": 23,
+    "salary": 34526,
+    "isStudent": true,
+    "add":{
+        "street": "123 Main St",
+        "city": "Anytown",
+        "zipcode": "65478"
+    },
+    "hobbies":["r","rfu"],
+    "course":[
+        {
+            "title": "js",
+            "completed": true
+        },
+        {
+            "title": "python",
+            "completed": false
+        }
+    ]
+}]

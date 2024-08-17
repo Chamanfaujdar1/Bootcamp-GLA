@@ -1,0 +1,368 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="C:\Users\taniy\OneDrive\Desktop\firstUiPage\MakemyTrip.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet"  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>MakeMyTrip</title>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-4">
+    <img class="img-logo" src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png">
+  </div>
+</div>
+
+<div class="row">
+  <div class="secondpart" >
+    <span ><a href="#"><i class="fas fa-plane-departure"></i>Flight</a></span>
+    <span><a href="#"><i class="fas fa-hotel"></i>Hotels</a></span>
+    <span ><a href="#"><i class="fas fa-house-chimney"></i>Home Stays</a></span>
+    <span ><a href="#"><i class="fas fa-umbrella-beach"></i>Holiday Packages</a></span>
+    <span ><a href="#"><i class="fas fa-train"></i>Trains</a></span>
+    <span ><a href="#"><i class="fas fa-bus"></i>Buses</a></span>
+    <span ><a href="#"><i class="fas fa-taxi"></i>Cabs</a></span>
+    <span ><a href="#"><i class="fas fa-copy"></i>Visa</a></span>
+    <span ><a href="#"><i class="fas fa-helicopter"></i>Charted Flights</a></span>
+    <span ><a href="#"><i class="fas fa-person-hiking"></i>Activities</a></span>
+  </div>
+</div>
+
+<div class="flight">
+  <div class="flight-type" style="margin-top: 5%; margin-left:3%">
+    <input type="radio" name="selected" value="" checked><b>ONEWAY</b>
+    <input type="radio" name="selected"><b>ROUNDTRIP</b>
+    <input type="radio" name="selected"><b>MULTICITY</b>
+  </div>
+  <div class="flight-search">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-md-3">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="fromDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              FROM
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="fromDropdown">
+              <li><a class="dropdown-item" href="#">Delhi</a></li>
+              <li><a class="dropdown-item" href="#">Mumbai</a></li>
+              <li><a class="dropdown-item" href="#">Hyderabad</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3" style="border: 1px solid rgb(207,207,207); height:110px">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="toDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              TO
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="toDropdown">
+              <li><a class="dropdown-item" href="#">Bengaluru</a></li>
+              <li><a class="dropdown-item" href="#">Bangkok</a></li>
+              <li><a class="dropdown-item" href="#">Texas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2" style="border: 1px solid rgb(207,207,207); height:110px">
+          <input type="text" class="form-control" id="departure-date" placeholder="DEPARTURE">
+        </div>
+        <div class="col-md-2" style="border: 1px solid rgb(207,207,207); height:110px">
+          <input type="text" class="form-control" id="return-date" placeholder="RETURN">
+        </div>
+        
+        <div class="col-md-2" style="border: 1px solid rgb(207,207,207); height:110px">
+          <input type="text" class="form-control" id="departure-date2" placeholder="DEPARTURE">
+        </div>
+        <div class="col-md-2" style="border: 1px solid rgb(207,207,207); height:110px">
+          <input type="text" class="form-control" id="return-date2" placeholder="RETURN">
+        </div>
+        
+        <script>
+          $(document).ready(function() {
+            $('#departure-date, #return-date, #departure-date2, #return-date2').datepicker({
+              format: 'yyyy-mm-dd'
+            });
+          });
+        </script>
+        <div class="col-md-2">TRAVELLERS AND CLASS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-start">
+      <p class="p-tag-flight">Select A<br> Fare Type:</p>
+      <div class="bot-button">
+        <input type="radio" name="btn2" value=""checked>Regular Fares
+        <input type="radio" name="btn2" value=""checked>Armed Forces Fares
+        <input type="radio" name="btn2" value=""checked>Student Fares
+        <input type="radio" name="btn2" value=""checked>Senior Citizen Fares
+        <input type="radio" name="btn2" value=""checked>Double Seates Fares
+      </div>
+    </div>
+  </div>
+  <div class="search">
+    <a>SEARCH</a>
+  </div>
+</div>
+
+
+<div class="explore">
+  <span><i class="fas fa-arrow-down" style="font-size: 18px;"></i>  Explore More  <i class="fas fa-arrow-down" style="font-size: 18px;"></i></span>
+</div>
+<div class="explore-card" >
+  <div class="container">
+    <div class="row justify-content-start" >
+      <div class="col-md-2"><span><img src="https://promos.makemytrip.com/appfest/2x/trip%20idea%201.png" style="height: 28px;width:28px">Trip Ideas</span></div>
+      <div class="col-md-2" style="border-left: 1px solid rgb(155, 152, 152);line-height:12px"><span ><img src="https://promos.makemytrip.com/appfest/2x/trip-money-1.png" style="height: 28px;width:25px">Trip Money <br></span><span style="font-size: x-small;color:gray">Loan Credits & more</span></div>
+      <div class="col-md-4"style="border-left: 1px solid rgb(155, 152, 152);"><span><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/dt_tert_flights.png" style="height: 28px;width:28px"><b>Explore International Flights</b><br></span><span style="font-size: x-small; color:gray">Cheapest Flights to Bali,Tokyo and more</span></div>
+      <div class="col-md-2"style="border-left: 1px solid rgb(155, 152, 152);"><span><img src="https://promos.makemytrip.com/appfest/2x/gps%201.png" style="height: 28px;width:28px">Nearby Gateways</span></div>
+      <div class="col-md-2"style="border-left: 1px solid rgb(155, 152, 152);"><span><img src="https://promos.makemytrip.com/appfest/2x/gift%20card%201.png" style="height: 28px;width:28px">Gift Cards</span></div>
+    </div>
+  </div>
+</div>
+<div class="scrollcards">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png" style="width:86px;height:56.33px"><span><b>International Flights Now Open!<br></b></span><span>Call 0124-4628747 for booking assistance</span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/language1@2x_20210901.png" style="width:68px;height:68px"><span>We are now available in Hindi!<br></span><span><a href="#">Click here to change language</a></span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px; margin:10px; padding:5px"><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/ic_flight_covid_info_dt.png" style="width:68px;height:68px"><span>Flight Booking impacted due to covid 19<br></span><span><a href="#">Click here to refund</a></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/language1@2x_20210901.png" style="width:68px;height:68px"><span>We are now available in Hindi!<br></span><span><a href="#">Click here to change language</a></span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px; margin:10px; padding:5px"><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/ic_flight_covid_info_dt.png" style="width:68px;height:68px"><span>Flight Booking impacted due to covid 19<br></span><span><a href="#">Click here to refund</a></span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Flight-update_a21052020.png" style="width:48px;height:32px"><span>Check international destinations <br> open for indians here, with there <br>guidelines</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px; margin:10px; padding:5px"><img src="https://promos.makemytrip.com/Growth/Images/B2C/2x/ic_flight_covid_info_dt.png" style="width:68px;height:68px"><span>Flight Booking impacted due to covid 19<br></span><span><a href="#">Click here to refund</a></span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Flight-update_a21052020.png" style="width:48px;height:32px"><span>Check international destinations <br> open for indians here, with there <br>guidelines</span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Flight-update_a21052020.png" style="width:48px;height:32px"><span>Taking a domestic flight <br><a href="#"> Click here to check travel guidelines</a></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Flight-update_a21052020.png" style="width:48px;height:32px"><span>Check international destinations <br> open for indians here, with there <br>guidelines</span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/Flight-update_a21052020.png" style="width:48px;height:32px"><span>Taking a domestic flight <br><a href="#"> Click here to check travel guidelines</a></span></div>
+            <div class="col-md-3.5" style="background-color: white; border-radius:10px;margin:10px; padding:5px"><img src="https://promos.makemytrip.com/notification/xhdpi/ic_credit_vouchers18052020.png" style="width:86px;height:68px"><span>Wondering how to use credit <br>vouchers issued by airlines?<a href="#">Click here for detailed instruction</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+<div class="container" style="background:white ;padding-bottom:30px;border-radius: 20px;">
+  <nav class="navbar navbar-expand-sm navbar-dark" >
+    <div class="container-fluid">
+      <span class="navbar-brand"  >Offers</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">ALL OFFERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FLIGHTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOTELS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOLIDAYS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">BUS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TRAINS</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">MORE</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Visa</a></li>
+              <li><a class="dropdown-item" href="#">Cabs</a></li>
+              <li><a class="dropdown-item" href="#">Bank Offers</a></li>
+              <li><a class="dropdown-item" href="#">Others</a></li>
+              <li><a class="dropdown-item" href="#">Experiences</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="btndoubleleft"><i class="fas fa-angle-left"></i></button><button class="btndoubleright"><i class="fas fa-angle-right"></i></button>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="z-index:2;box-shadow:0px 1px 1px 1px #c4bfbf ;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, excepturi. Doloribus, quod repellat. Autem alias labore quidem aspernatur suscipit, magnam, molestias nostrum dignissimos cum eos dolore eaque quas delectus pariatur?</p>
+      </div>
+      <div class="col-md-6" style="z-index:2;box-shadow:0px 1px 1px 1px #d1cdcd ;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit possimus dolorem mollitia in tenetur vero voluptatem enim ipsa. Vero, numquam maiores ullam laborum harum quam inventore at possimus? Dolorem, dolore.</p>
+      </div>
+      <div class="col-md-6" style="z-index:2;box-shadow:0px 1px 1px 1px #c9c5c5 ;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, earum illum! Porro, libero ut? Assumenda totam nobis temporibus dolorem asperiores, at, magni corrupti minima facilis incidunt explicabo! Accusamus, praesentium hic.</p>
+      </div>
+      <div class="col-md-6" style="z-index:2;box-shadow:0px 1px 1px 1px #ccc4c4 ;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, earum illum! Porro, libero ut? Assumenda totam nobis temporibus dolorem asperiores, at, magni corrupti minima facilis incidunt explicabo! Accusamus, praesentium hic.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://mmt.servedbyadbutler.com/getad.img/;libID=3406718" style="width: 970px;height:90px; margin:10px;margin-left:50px">
+</div>
+
+<div class="container" style="background:white; padding:32px 60px 40px 40px ;margin-bottom: 20px; border-radius: 20px;">
+  <h1>Download App Now!</h1>
+  <p style="font-weight: 500;font-size:22px; color:#4a4a4a">Get India's #1 travel super app, join 100 Million+ happy travellers!</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <img src="images/MMT.png" style="margin-right: 5px;" >
+      </div>
+      <div class="col-md-7" style="border-right: #4a4a4a;">
+        <p style="margin-top:15px;margin-left:20px; font-size:small; color:#4a4a4a;word-spacing :0px;"> Use code <b>WELCOMEMMT</b> and get upto <b>Rs 1200</b> off on your first domestic flight booking</p>
+        <div class="number" >
+          <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_mmt_ui_assets/in_v2.webp" style="width:32px; height:15.92px; margin-left:5px"><span>+91</span>
+          <input type="number" placeholder="Enter Mobile number" style="color:#4a4a4a; border:none;font-weight:bold">
+          <button class="getapplink">GET APP LINK</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" >
+  <div class="maketriprow">
+    <img src="https://www.tripmoney.com/ext/static/TravelLoan/travelLoan.png" style="height: 61px; width:61px" >
+  </div>
+</div>
+<div class="container" style="margin-top:10px; padding: 25px 40px 40px; background:white; border-radius: 15px; ">
+  <div class="row"style="margin-bottom:15px">
+    <div class="col-md-4" >
+      <span style="font-size: 18px;font-weight:bold;"><img src="http://promos.makemytrip.com/images/50x50-Other-23052019.png" style="border-radius: 30px;float:left;margin-right:10px">Chennai Flight </span>
+      <p style="font-size: 12px;">Via - Delhi, Mumbai, Coimbatore, Madurai</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold;"><img src="https://promos.makemytrip.com/store/GoaDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Goa Flights </span>
+      <p style="font-size: 12px;">Via - Delhi , Mumbai, Bangalore, Ahmedabad</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/MumbaiDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Mumbai Flights</span>
+      <p style="font-size: 12px;">Via - Delhi, Bangalore, Chennai, Ahmedabad</p>
+    </div>
+  </div>
+
+  <div class="row"style="margin-bottom:15px">
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="http://promos.makemytrip.com/images/50x50-Ooty-23052019.png" style="border-radius: 30px;float:left;margin-right:10px">Hyderabad Flights</span>
+      <p style="font-size: 12px;">Via - Chennai, Mumbai, Bangalore, Delhi</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/DelhiDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Delhi Flights </span>
+      <p style="font-size: 12px;">Via - Mumbai, Pune, Bangalore, Chennai</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/PuneDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Pune Flights</span>
+      <p style="font-size: 12px;">Via - Delhi, Bangalore, Chennai, Ahmedabad</p>
+    </div>
+  </div>
+
+  <div class="row"style="margin-bottom:15px">
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/SingaporeDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Kolkata Flights </span>
+      <p style="font-size: 12px;">Via - Delhi, Mumbai, Bangalore, Pune</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/BangaloreDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Bangalore Flights </span>
+      <p style="font-size: 12px;">Via - Delhi, Pune, Mumbai, Kolkata</p>
+    </div>
+
+    <div class="col-md-4">
+      <span style="font-size: 18px;font-weight:bold"><img src="https://promos.makemytrip.com/store/JaipurDT.JPG" style="border-radius: 30px;float:left;margin-right:10px">Jaipur Flights </span>
+      <p style="font-size: 12px;">Via - Mumbai, Delhi, Pune, Bangalore</p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="margin-top: 60px; background-color: #d1cfcf;">
+  <div class="row">
+    <div class="col-md-6">
+      <p style="font-size:16px">Why MakeMyTrip?<p>
+      <p style="font-size:12px">Established in 2000, MakeMyTrip has since positioned itself as one of the leading companies, providing great offers, competitive airfares, exclusive discounts, and a seamless online booking experience to many of its customers. The experience of booking your flight tickets, hotel stay, and holiday package through our desktop site or mobile app can be done with complete ease and no hassles at all. We also deliver amazing offers, such as Instant Discounts, Fare Calendar, MyRewardsProgram, MyWallet,...</p>
+    </div>
+    <div class="col-md-6">
+      <p style="font-size: 16px;">Booking Flights with MakeMyTrip</p>
+      <p style="font-size: 12px;">At MakeMyTrip, you can find the best
+        of deals and cheap air tickets to any place you want by booking
+        your tickets on our website or app. Being India’s leading website fo
+        r hotel, flight, and holiday bookings, MakeMyTrip helps you book flight
+        tickets that are affordable and customized to your convenience. With customer
+        satisfaction being our ultimate goal, we also have a 24/7 dedicated helpline
+        to cater to our customer’s queries and concerns. Serving over 5 million happy customers,
+        we at MakeMyTrip are glad to fulfill the dreams of folks who need a quick and easy
+        means to find air tickets. You can get a hold of the cheapest flight of your choice
+        today while also enjoying the other available options for your travel needs with us.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer style="background-color: black; color: white;height: 120px; margin-top: 20px;">
+  <img src="https://twitter.com/makemytrip/" >
+  <img src="https://www.facebook.com/makemytrip/" >
+  <a href="C:\Users\taniy\OneDrive\Desktop\firstUiPage\MakemyTrip.html" style="float: right; color: white; text-decoration: none;">© 2022 MAKEMYTRIP PVT. LTD.
+
+    <br>Country India USA UAE</a>
+
+</footer>
+
+
+<script src="js/bootstrap.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+
+  });
+</script>
+
+
+
+</body>
+</html>
